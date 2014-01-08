@@ -1,20 +1,21 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use lib qw(lib ../lib ../../lib);
-use CGI::Mungo;
 my $options = {
 	'responsePlugin' => 'CGI::Mungo::Response::Raw',
 	'checkReferer' => 0
 };
-my $m = CGI::Mungo->new($options);
-my $actions = {
-	"default" => \&hello
-};
-$m->setActions($actions);
+my $m = App->new($options);
 $m->run();	#do this thing!
-###########################################
-sub hello{
+#########################################################################################################
+##########################################################################################################
+package App;
+use lib qw(lib ../lib ../../lib);
+use strict;
+use warnings;
+use base qw(CGI::Mungo);
+#########################################################################################################
+sub handleDefault{
 	my $m = shift;
 	my $response = $m->getResponse();
 	$response->setContent("Hello World");

@@ -26,6 +26,12 @@ CGI::Mungo - Very simple CGI web framework
 All action subs are passed a L<CGI::Mungo> object as the only parameter, from this you should be able to reach
 everything you need.
 
+For a simple example:
+
+1) Run script/simple_cgi_server.pl
+2) Visit the URL output by the above script.
+3) View the source of the test script at "script/example_cgi_scripts/mungo_hello.cgi"
+
 =head1 METHODS
 
 =cut
@@ -450,6 +456,10 @@ To change the session file save path use the following code at the top of your s
 
 	$CGI::Mungo::Session::path = "/var/tmp";
 
+=head2 Naming
+
+Named after Mungo a charator from the "Catillac Cats" cartoon.
+
 =head1 Author
 
 MacGyveR <dumb@cpan.org>
@@ -458,7 +468,7 @@ Development questions, bug reports, and patches are welcome to the above address
 
 =head1 Copyright
 
-Copyright (c) 2012 MacGyveR. All rights reserved.
+Copyright (c) 2014 MacGyveR. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 

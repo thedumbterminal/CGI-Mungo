@@ -6,20 +6,17 @@ use HTTP::Status;
 use HTTP::Response;
 use Data::Dumper;
 use Carp;
-my $address = "127.0.0.1";
-my $webRoot = "example_cgi_apps";
+my $webRoot = "script/example_cgi_apps";
 my $d;
 print "Waiting for port to become ready\n";
 while(!$d){
-	$d = HTTP::Daemon->new(
-		LocalAddr => $address
-	);
+	$d = HTTP::Daemon->new();
 	print ".";
 	sleep 1;
 }
 print "\n";
 if($d){
-	$ENV{'SERVER_NAME'} = $address;
+	$ENV{'SERVER_NAME'} = 'unknown';
 	my $baseUrl = $d->url();
 	print "Point your browser to: " . $baseUrl . "mungo_hello.cgi\n";
 	while(my $c = $d->accept) {
