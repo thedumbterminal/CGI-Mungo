@@ -460,6 +460,8 @@ To change the session file save path use the following code at the top of your s
 
 Named after Mungo a charator from the "Catillac Cats" cartoon.
 
+L<http://en.wikipedia.org/wiki/The_Catillac_Cats#Mungo>
+
 =head1 Author
 
 MacGyveR <dumb@cpan.org>
