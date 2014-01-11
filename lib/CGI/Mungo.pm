@@ -39,6 +39,7 @@ For a simple example:
 use strict;
 use warnings;
 use Carp;
+use String::Util 'trim';
 use Class::Load qw(is_class_loaded);
 use base qw(CGI::Mungo::Base CGI::Mungo::Utils CGI::Mungo::Log);
 use CGI::Mungo::Response;
@@ -274,7 +275,7 @@ sub run{	#run the code for the given action
 				$self->$subName();
 			};
 			if($@){	#problem with sub
-				$response->setError("<pre>" . $@ . "</pre>");
+				$response->setError(trim($@));
 			}
 		}
 		else{	#no code to execute
